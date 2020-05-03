@@ -24,19 +24,19 @@ docker_version='1.12.6'
 #Configure the multi-tenant SDN plugin (default is 'redhat/openshift-ovs-subnet'
 os_sdn_network_plugin_name='redhat/openshift-ovs-multitenant'
 openshift_master_cluster_method=native
-openshift_master_cluster_hostname=paas.193.95.99.75
-openshift_master_cluster_public_hostname=paas.193.95.99.75
+openshift_master_cluster_hostname=paas.hsse.technology
+openshift_master_cluster_public_hostname=paas.hsse.technology
 
-openshift_master_default_subdomain=apps.193.95.99.75
-openshift_master_public_console_url=https://paas.193.95.99.75:8443/console
+openshift_master_default_subdomain=apps.hsse.technology
+openshift_master_public_console_url=https://paas.hsse.technology:8443/console
 
 osm_default_node_selector='region=apps'
 openshift_hosted_registry_selector='region=infra'
 openshift_hosted_registry_replicas=1
 openshift_hosted_registry_storage_kind=nfs
 openshift_hosted_registry_storage_access_modes=['ReadWriteMany']
-openshift_hosted_registry_storage_host=paas.193.95.99.75
-#openshift_hosted_registry_storage_host=nfs.193.95.99.75
+openshift_hosted_registry_storage_host=paas.hsse.technology
+#openshift_hosted_registry_storage_host=nfs.hsse.technology
 openshift_hosted_registry_storage_nfs_directory=/srv/nfs
 openshift_hosted_registry_storage_volume_name=registry
 openshift_hosted_registry_storage_volume_size=2Gi
@@ -47,18 +47,18 @@ openshift_hosted_registry_storage_volume_size=2Gi
 
 
 [etcd]
-paas.193.95.99.75 openshift_ip=192.168.11.20
+paas.hsse.technology openshift_ip=192.168.11.20
 
 # host group for masters
 [masters]
-paas.193.95.99.75 openshift_ip=192.168.11.20
+paas.hsse.technology openshift_ip=192.168.11.20
 
 # host group for nodes, includes region info
 [nodes]
-paas.193.95.99.75 openshift_node_labels="{'region': 'master', 'zone': 'east'}" openshift_ip=192.168.11.20
-paas-node-infra.193.95.99.75 openshift_node_labels="{'region': 'infra', 'zone': 'east'}" openshift_ip=192.168.11.21
-paas-node-app.193.95.99.75 openshift_node_labels="{'region': 'apps', 'zone': 'west'}" openshift_ip=192.168.11.22
+paas.hsse.technology openshift_node_labels="{'region': 'master', 'zone': 'east'}" openshift_ip=192.168.11.20
+paas-node-infra.hsse.technology openshift_node_labels="{'region': 'infra', 'zone': 'east'}" openshift_ip=192.168.11.21
+paas-node-app.hsse.technology openshift_node_labels="{'region': 'apps', 'zone': 'west'}" openshift_ip=192.168.11.22
 
 [nfs]
-#nfs.193.95.99.75 openshift_ip
-paas.193.95.99.75
+#nfs.hsse.technology openshift_ip
+paas.hsse.technology
