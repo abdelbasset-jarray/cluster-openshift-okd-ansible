@@ -60,7 +60,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     node.vm.box = centos_box_name
     #node.vm.box_url = centos_box_url
     node.vm.network :private_network, ip: "#{NETWORK_BASE}.#{INTEGRATION_START_SEGMENT + 1}"
-    node.vm.hostname = "paas-node-infra.hsse.technology"
+    node.vm.hostname = "paas-node-infra.smti.com.tn"
     node.vm.provision "shell", inline: "sudo yum -y install centos-release-openshift-origin37"
   end
  
@@ -68,14 +68,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     node.vm.box = centos_box_name
     #node.vm.box_url = centos_box_url
     node.vm.network :private_network, ip: "#{NETWORK_BASE}.#{INTEGRATION_START_SEGMENT + 2}"
-    node.vm.hostname = "paas-node-app.hsse.technology"
+    node.vm.hostname = "paas-node-app.smti.com.tn"
     node.vm.provision "shell", inline: "sudo yum -y install centos-release-openshift-origin37"
   end
 
   config.vm.define :admin do |admin|
     admin.vm.box = centos_box_name
     admin.vm.network :private_network, ip: "#{NETWORK_BASE}.#{INTEGRATION_START_SEGMENT + 3}"
-    admin.vm.hostname = "paas-admin.hsse.technology"
+    admin.vm.hostname = "paas-admin.smti.com.tn"
     admin.vm.provision "shell", inline: "sudo yum -y install atomic-openshift-utils"
     admin.vm.provision "shell", inline: "sudo cp -f /vagrant/etc_ansible_hosts /etc/ansible/hosts"
   end
