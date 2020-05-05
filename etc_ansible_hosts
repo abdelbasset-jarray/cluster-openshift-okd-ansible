@@ -8,6 +8,7 @@ nfs
 # Set variables common for all OSEv3 hosts
 [OSEv3:vars]
 ansible_ssh_user=root
+ansible_ssh_pass=vagrant
 ansible_become=true
 deployment_type=origin
 debug_level=2
