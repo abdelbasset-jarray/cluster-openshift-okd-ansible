@@ -33,7 +33,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.hostmanager.ignore_private_ip = false
 
   config.landrush.enabled = true
-  config.landrush.tld = 'hsse.technology'
+  config.landrush.tld = 'smti.com.tn'
   config.landrush.guest_redirect_dns = false 
 
   config.vm.provider "virtualbox" do |v|
@@ -44,8 +44,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
  # config.vm.define :nfs do |nfshost|
  #   nfshost.vm.box = centos_box_name
  #   nfshost.vm.network :private_network, ip: "#{NETWORK_BASE}.#{INTEGRATION_START_SEGMENT + 4}"
- #   nfshost.hostmanager.aliases = %w(nfs.hsse.technology)
- #   nfshost.vm.hostname = "nfs.hsse.technology"
+ #   nfshost.hostmanager.aliases = %w(nfs.smti.com.tn)
+ #   nfshost.vm.hostname = "nfs.smti.com.tn"
  # end
 
   config.vm.define :master do |master|
