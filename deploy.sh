@@ -4,4 +4,6 @@ for host in monitoring.smti.com.tn paas-node-infra.smti.com.tn paas-node-app.smt
     do ssh-copy-id -i /root/.ssh/id_rsa.pub $host; \
     done
 
-ansible-playbook /home/vagrant/openshift-ansible/playbooks/byo/config.yml
+vagrant ssh master \
+        -c 'ansible-playbook /home/vagrant/openshift-ansible/playbooks/prerequisites.yml &&
+            ansible-playbook /home/vagrant/openshift-ansible/playbooks/deploy_cluster.yml'
